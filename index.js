@@ -138,7 +138,13 @@ const writeLine = _util.writeLine;
     if (await confirm('Init Git repository?', true)) {
         await withSpinner('Initialize Git repository ...', async (spinner) => {
             await spawn('git', out_dir, ['init']);
-    
+
+            spinner.text = 'Add untracked files ...';
+            await spawn('git', out_dir, ['add', '-A']);
+
+            spinner.text = 'Create initial commit ...';
+            await spawn('git', out_dir, ['commit', '-m', 'initial commit']);
+
             spinner.succeed('Git repository initialized');
         });
     }
