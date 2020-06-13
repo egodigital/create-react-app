@@ -8,20 +8,21 @@
 
 import React from 'react';
 
-import AppBar from '@material-ui/core/AppBar';
-import IconButton from '@material-ui/core/IconButton';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-
-import GitHubIcon from '@material-ui/icons/GitHub';
+import { AppBar, IconButton, Link, Toolbar, Typography } from '@material-ui/core';
 
 import styles from './Header.module.scss';
 import { makeStyles } from '@material-ui/core/styles';
+
+import { RouteChildrenProps, withRouter } from 'react-router-dom';
+
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 import Logo from '../assets/egodigital-logo.png';
 
 interface IHeaderProps {
 }
+
+type HeaderProps = React.PropsWithChildren<IHeaderProps> & RouteChildrenProps;
 
 export const useStyles = makeStyles(theme => ({
     '@global': {
@@ -37,6 +38,10 @@ export const useStyles = makeStyles(theme => ({
     grow: {
         flexGrow: 1,
     },
+    link: {
+        cursor: 'pointer',
+        marginRight: theme.spacing(2),
+    },
     toolbar: {
         flexWrap: 'wrap',
     },
@@ -45,7 +50,7 @@ export const useStyles = makeStyles(theme => ({
     },
 }));
 
-const Header: React.FC<IHeaderProps> = (props) => {
+const Header = (props: HeaderProps) => {
     const classes = useStyles();
 
     return (
@@ -67,6 +72,14 @@ const Header: React.FC<IHeaderProps> = (props) => {
                     </Typography>
 
                     <div className={classes.grow} />
+
+                    <Link
+                        className={classes.link}
+                        onClick={() => props.history.push('/page-1')}>Page 1</Link>
+                    <Link
+                        className={classes.link}
+                        onClick={() => props.history.push('/page-2')}>Page 2</Link>
+
                     <div>
                         <IconButton
                             title={'Open GitHub ...'}
@@ -80,6 +93,6 @@ const Header: React.FC<IHeaderProps> = (props) => {
             </AppBar>
         </div>
     );
-}
+};
 
-export default Header;
+export default withRouter(Header);
