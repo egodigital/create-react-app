@@ -6,7 +6,7 @@
  * https://e-go-digital.com
  */
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import styles from './Page1.module.scss';
@@ -16,14 +16,14 @@ interface IPage1Props {
 
 const Page1: React.FC<IPage1Props> = (props) => {
     return (
-        <Fragment>
+        <div className={styles['Page1']}>
             <NavLink
                 className={['App-link', styles['page1-link']].join(' ')}
                 to="/page-2"
             >
                 Goto Page 2
             </NavLink>
-        </Fragment>
+        </div>
     );
 };
 
