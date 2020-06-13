@@ -1,7 +1,7 @@
 {
     "name": "@egodigital/create-react-app",
     "displayName": "React Web Creator",
-    "version": "0.1.0",
+    "version": "0.3.0",
     "description": "Generator, that creates and setup a new React web app.",
     "main": "index.js",
     "scripts": {
@@ -14,7 +14,25 @@
     "author": "e.GO Digital GmbH, Aachen, Germany",
     "homepage": "https://github.com/egodigital/create-react-app#readme",
     "keywords": [
-        "react"
+        "axios",
+        "enzyme",
+        "generator",
+        "i18",
+        "jest",
+        "material design",
+        "material-ui",
+        "prop-types",
+        "pwa",
+        "react",
+        "recharts",
+        "rest",
+        "router",
+        "routing",
+        "sass",
+        "scss",
+        "spa",
+        "typescript",
+        "web"
     ],
     "license": "MIT",
     "dependencies": {

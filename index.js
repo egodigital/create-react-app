@@ -23,6 +23,7 @@
  */
 
 const chalk = require('chalk');
+const ejs = require('ejs');
 const fs = require('fs-extra');
 const minimist = require('minimist');
 const path = require('path');
@@ -101,6 +102,22 @@ const writeLine = _util.writeLine;
         );
 
         spinner.succeed("'package.json' updated");
+    });
+
+    // update index.html
+    await withSpinner(`Update 'index.html' ...`, async (spinner) => {
+        const out_file = path.resolve(out_dir, 'public/index.html');
+
+        const parsedIndexHtml = ejs.render(
+            await fs.readFile(out_file, 'utf8'),
+            {
+                app_name
+            }
+        );
+
+        await fs.writeFile(out_file, parsedIndexHtml, 'utf8');
+
+        spinner.succeed("'index.html' updated");
     });
 
     // execute NPM commands
