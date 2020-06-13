@@ -1,0 +1,37 @@
+{
+    "name": "@egodigital/create-react-app",
+    "displayName": "React Web Creator",
+    "version": "0.0.1",
+    "description": "Template, that creates and setup a new React web app.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/egodigital/create-react-app"
+    },
+    "author": "e.GO Digital GmbH, Aachen, Germany",
+    "homepage": "https://github.com/egodigital/create-react-app#readme",
+    "keywords": [
+        "react"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "chalk": "^4.1.0",
+        "ejs": "^3.1.3",
+        "fs-extra": "^9.0.1",
+        "inquirer": "^7.1.0",
+        "minimist": "^1.2.5",
+        "open": "^7.0.4",
+        "ora": "^4.0.4",
+        "sanitize-filename": "^1.6.3"
+    },
+    "devDependencies": {
+        "@types/ejs": "^3.0.4",
+        "@types/fs-extra": "^9.0.1",
+        "@types/inquirer": "^6.5.0",
+        "@types/minimist": "^1.2.0",
+        "@types/node": "^10.17.24"
+    }
+}
