@@ -27,7 +27,9 @@ const Body: React.FC<IBodyProps> = (props) => {
             <Switch>
                 <Route path="/" exact component={Page1} />
                 <Route path="/page-1" exact component={Page1} />
-                <Route path="/page-2" exact component={Page2} />
+                <Route path="/page-2" exact render={() => {
+                    return <Page2 maxResults={10} nationality={'de'} />
+                }} />
 
                 {/** fallback => 404 not found **/}
                 <Route path="/" component={NotFoundPage} />
