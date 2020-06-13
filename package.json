@@ -1,8 +1,8 @@
 {
     "name": "@egodigital/create-react-app",
     "displayName": "React Web Creator",
-    "version": "0.0.1",
-    "description": "Template, that creates and setup a new React web app.",
+    "version": "0.1.0",
+    "description": "Generator, that creates and setup a new React web app.",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +23,6 @@
         "fs-extra": "^9.0.1",
         "inquirer": "^7.1.0",
         "minimist": "^1.2.5",
-        "open": "^7.0.4",
         "ora": "^4.0.4",
         "sanitize-filename": "^1.6.3"
     },

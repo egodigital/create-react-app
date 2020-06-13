@@ -25,7 +25,6 @@
 const chalk = require('chalk');
 const fs = require('fs-extra');
 const minimist = require('minimist');
-const open = require('open');
 const path = require('path');
 const sanitizeFilename = require('sanitize-filename');
 const _help = require('./help');

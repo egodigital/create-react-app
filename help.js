@@ -29,10 +29,12 @@ const writeLine = _util.writeLine;
 
 
 exports.showHelp = async () => {
+    writeLine(`${packageJSON.description}`);
+    writeLine();
     writeLine(' Syntax:  ego create react-app [APP_NAME]');
-    writeLine('');
+    writeLine();
     writeLine('Example:  ego create react-app my-awesome-app');
-    writeLine('');
+    writeLine();
 
     process.exit(1);
 }

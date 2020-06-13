@@ -86,7 +86,7 @@ exports.write = (val) => {
     process.stdout.write(val);
 };
 
-exports.writeLine = (val) => {
+exports.writeLine = (val = '') => {
     process.stdout.write(val);
     process.stdout.write(os.EOL);
 };
