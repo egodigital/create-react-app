@@ -45,4 +45,5 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Copyright
 
-[./src/assets/egodigital.png](egodigital.png) logo is property of [e.GO Digital GmbH, Aachem, Germany](https://e-go-digital.com).
+* [egodigital.png](favicon.ico) logo is property of [e.GO Digital GmbH, Aachem, Germany](https://e-go-digital.com).
+* [favicon.ico](./src/public/favicon.ico) logo is property of [e.GO Digital GmbH, Aachem, Germany](https://e-go-digital.com).

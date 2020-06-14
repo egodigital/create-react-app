@@ -16,10 +16,12 @@ import { Alert } from '@material-ui/lab';
 
 import styles from './Page2.module.scss';
 
+import { withTranslation, WithTranslation } from 'react-i18next';
+
 import axios from 'axios';
 import Enumerable from 'node-enumerable';
 
-interface IPage2Props extends StyledComponentProps {
+interface IPage2Props extends StyledComponentProps, WithTranslation {
     maxResults: number;
     nationality: string;
 }
@@ -31,59 +33,59 @@ interface IPage2State {
 }
 
 interface IUser {
-    "cell": string;
-    "dob": {
-        "age": number;
-        "date": string;
+    cell: string;
+    dob: {
+        age: number;
+        date: string;
     };
-    "email": string;
-    "gender": string;
-    "id": {
-        "name": string;
-        "value": null;
+    email: string;
+    gender: string;
+    id: {
+        name: string;
+        value: null;
     };
-    "location": {
-        "city": string;
-        "coordinates": {
-            "latitude": string;
-            "longitude": string;
+    location: {
+        city: string;
+        coordinates: {
+            latitude: string;
+            longitude: string;
         };
-        "country": string;
-        "postcode": number;
-        "state": string;
-        "street": {
-            "name": string;
-            "number": number;
+        country: string;
+        postcode: number;
+        state: string;
+        street: {
+            name: string;
+            number: number;
         };
-        "timezone": {
-            "description": string;
-            "offset": string;
+        timezone: {
+            description: string;
+            offset: string;
         };
     };
-    "login": {
-        "md5": string;
-        "password": string;
-        "salt": string;
-        "sha1": string;
-        "sha256": string;
-        "username": string;
-        "uuid": string;
+    login: {
+        md5: string;
+        password: string;
+        salt: string;
+        sha1: string;
+        sha256: string;
+        username: string;
+        uuid: string;
     };
-    "name": {
-        "first": string;
-        "last": string;
-        "title": string;
+    name: {
+        first: string;
+        last: string;
+        title: string;
     };
-    "nat": string;
-    "phone": string;
-    "picture": {
-        "large": string;
-        "medium": string;
-        "thumbnail": string;
+    nat: string;
+    phone: string;
+    picture: {
+        large: string;
+        medium: string;
+        thumbnail: string;
     };
-    "registered": {
-        "age": number;
-        "date": string;
+    registered: {
+        age: number;
+        date: string;
     };
 }
 
@@ -194,7 +196,7 @@ class Page2 extends Component<IPage2Props, IPage2State> {
                     variant="h3"
                     color="inherit"
                 >
-                    Page 2 - Axios example
+                    {this.props.t('page2.title')}
                 </Typography>
 
                 {spinner}
@@ -219,4 +221,6 @@ export default withStyles(theme => {
             backgroundColor: theme.palette.background.paper
         }
     };
-})(Page2);
+})(
+    withTranslation()(Page2)
+);

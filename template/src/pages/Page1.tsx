@@ -15,6 +15,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'r
 import styles from './Page1.module.scss';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { useTranslation } from 'react-i18next';
+
 interface IPage1Props {
 }
 
@@ -51,6 +53,8 @@ export const useStyles = makeStyles(theme => ({
 const Page1: React.FC<IPage1Props> = (props) => {
     const classes = useStyles();
 
+    const { t } = useTranslation();
+
     return (
         <div className={styles['Page1']}>
             <Typography
@@ -58,7 +62,7 @@ const Page1: React.FC<IPage1Props> = (props) => {
                 variant="h3"
                 color="inherit"
             >
-                Page 1 - Example chart
+                {t('page1.title')}
             </Typography>
 
             <LineChart

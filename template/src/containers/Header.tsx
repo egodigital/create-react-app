@@ -18,6 +18,7 @@ import { RouteChildrenProps, withRouter } from 'react-router-dom';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 import Logo from '../assets/egodigital-logo.png';
+import { useTranslation } from 'react-i18next';
 
 interface IHeaderProps {
 }
@@ -50,8 +51,10 @@ export const useStyles = makeStyles(theme => ({
     },
 }));
 
-const Header = (props: HeaderProps) => {
+const Header = (props: React.PropsWithChildren<HeaderProps>) => {
     const classes = useStyles();
+
+    const { t } = useTranslation();
 
     return (
         <div className={styles['Header']}>
@@ -68,21 +71,26 @@ const Header = (props: HeaderProps) => {
                             className={styles['logo']}
                             src={Logo}
                             alt="e.GO Digital logo"
-                            title={'Visit e.GO Digital ...'} />
+                            title={t('header.open_ego_digital')} />
                     </Typography>
 
                     <div className={classes.grow} />
 
                     <Link
                         className={classes.link}
-                        onClick={() => props.history.push('/page-1')}>Page 1</Link>
+                        onClick={() => props.history.push('/page-1')}
+                    >
+                        {t('page1.short_title')}
+                    </Link>
                     <Link
                         className={classes.link}
-                        onClick={() => props.history.push('/page-2')}>Page 2</Link>
+                        onClick={() => props.history.push('/page-2')}>
+                        {t('page2.short_title')}
+                    </Link>
 
                     <div>
                         <IconButton
-                            title={'Open GitHub ...'}
+                            title={t('header.open_github')}
                             color="inherit"
                             onClick={() => window.open('https://github.com/egodigital/create-react-app', '_blank')}
                         >
