@@ -40,7 +40,7 @@ const packageJSON = JSON.parse(
 );
 const spawn = _util.spawn;
 const start = new Date();
-const template_dir = path.resolve(current_dir, 'template');
+const template_dir = path.resolve(__dirname, 'template');
 const withSpinner = _util.withSpinner;
 const writeLine = _util.writeLine;
 
