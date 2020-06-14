@@ -141,6 +141,22 @@ const writeLine = _util.writeLine;
         spinner.succeed("'index.html' updated");
     });
 
+    // update README.md
+    await withSpinner(`Update 'README.md' ...`, async (spinner) => {
+        const out_file = path.resolve(out_dir, 'README.md');
+
+        const parsedReadme = ejs.render(
+            await fs.readFile(out_file, 'utf8'),
+            {
+                app_name
+            }
+        );
+
+        await fs.writeFile(out_file, parsedReadme, 'utf8');
+
+        spinner.succeed("'README.md' updated");
+    });
+
     // execute NPM commands
     await withSpinner("Execute 'npm' commands ...", async (spinner) => {
         spinner.text = "Execute 'npm install' ...";
