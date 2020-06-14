@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/@egodigital/create-react-app.svg)](https://www.npmjs.com/package/@egodigital/create-react-app)
+
 # @egodigital/create-react-app
 
 Generator, that creates and setup a new [React](https://reactjs.org/) web app, with a lot of benefits:
