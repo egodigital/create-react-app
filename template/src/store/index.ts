@@ -6,12 +6,11 @@
  * https://e-go-digital.com
  */
 
+import Page2Reducer, { IPage2ReduxState } from './reducers/page2';
+import Thunk from 'redux-thunk';
+import { Nilable } from '@egodigital/types';
 import { ConnectedComponent, connect as connectToReduxStore } from 'react-redux';
 import { Dispatch, applyMiddleware, combineReducers, createStore } from 'redux';
-import Page2Reducer, { IPage2ReduxState } from './reducers/page2';
-
-import { Nilable } from '@egodigital/types';
-import thunk from 'redux-thunk';
 
 /**
  * Function, which connects Redux actions to props.
@@ -70,7 +69,7 @@ const store = createStore(
         page2: Page2Reducer
     }),
     applyMiddleware(
-        thunk
+        Thunk
     )
 );
 
