@@ -20,7 +20,7 @@ Generator, that creates and setup a new [React](https://reactjs.org/) web app, w
 To execute the generator, run one of the following commands:
 
 ```bash
-npx github:egodigital/create-react-app
+npx github:egodigital/create-react-app my-new-app
 ```
 
 ## License
