@@ -17,22 +17,10 @@ Generator, that creates and setup a new [React](https://reactjs.org/) web app, w
 
 ## Usage
 
-Recommended, but not required, is to install [e.GO CLI](https://github.com/egodigital/ego-cli):
-
-```bash
-# on some system, 'sudo' may be used
-# to execute the command
-npm install -g ego-cli
-```
-
 To execute the generator, run one of the following commands:
 
 ```bash
-# if e.GO CLI is installed
-ego create react-app
-
-# the common way
-npx @egodigital/create-react-app
+npx github:egodigital/create-react-app
 ```
 
 ## License

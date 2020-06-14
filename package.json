@@ -1,9 +1,12 @@
 {
     "name": "@egodigital/create-react-app",
     "displayName": "React Web Creator",
-    "version": "0.14.3",
+    "version": "0.14.4",
     "description": "Generator, that creates and setup a new React web app.",
     "main": "index.js",
+    "bin": {
+        "create-react-app": "./bin/create-react-app"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
