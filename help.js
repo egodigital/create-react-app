@@ -31,9 +31,18 @@ const writeLine = _util.writeLine;
 exports.showHelp = async () => {
     writeLine(`${packageJSON.description}`);
     writeLine();
-    writeLine(' Syntax:  ego create react-app [APP_NAME]');
+    
+    writeLine('Syntax:    ego create react-app [APP_NAME]');
     writeLine();
-    writeLine('Example:  ego create react-app my-awesome-app');
+
+    writeLine(`General options:`);
+    writeLine(` -f, --force     # Remove existing output directory.`);
+    writeLine(` -g, --git-init  # Initialize git repository.`);
+    writeLine(` -v, --vscode    # Open Visual Studio Code.`);
+    writeLine();
+
+    writeLine('Examples:    ego create react-app my-app');
+    writeLine('             ego create react-app my-cool-app -gv');
     writeLine();
 
     process.exit(1);

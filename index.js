@@ -55,6 +55,9 @@ const writeLine = _util.writeLine;
     }
 
     const app_name = args['_'][0].trim();
+    const git_init = args['g'] || args['git-init'];
+    const open_vscode = args['v'] || args['vscode'];
+    const force = args['f'] || args['force'];
 
     if (app_name === '') {
         // not app name
@@ -66,9 +69,17 @@ const writeLine = _util.writeLine;
     // check, if out_dir already exists
     await withSpinner(`Check if directory '${path.basename(app_name)}' exists ...`, async (spinner) => {
         if (fs.existsSync(out_dir)) {
-            spinner.warn(`Directory '${path.basename(app_name)}' already exists!`);
+            const stat = await fs.stat(out_dir);
 
-            process.exit(3);
+            if (stat.isDirectory() && force) {
+                spinner.text = `Removing existing directory '${path.basename(app_name)}' ...`;
+
+                await fs.remove(out_dir);
+            } else {
+                spinner.warn(`Directory or file '${path.basename(app_name)}' already exists!`);
+
+                process.exit(3);
+            }
         }
 
         await fs.mkdirs(out_dir);
@@ -135,7 +146,7 @@ const writeLine = _util.writeLine;
     });
 
     // init Git repository?
-    if (await confirm('Init Git repository?', true)) {
+    if (git_init || await confirm('Init Git repository?', true)) {
         await withSpinner('Initialize Git repository ...', async (spinner) => {
             await spawn('git', out_dir, ['init']);
 
@@ -150,7 +161,7 @@ const writeLine = _util.writeLine;
     }
 
     // open Visual Studio Code?
-    if (await confirm('Open Visual Studio Code?', true)) {
+    if (open_vscode || await confirm('Open Visual Studio Code?', true)) {
         await withSpinner('Open Visual Studio Code ...', async (spinner) => {
             await spawn('code', out_dir, ['.']);
     
