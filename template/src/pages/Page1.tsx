@@ -7,17 +7,12 @@
  */
 
 import React from 'react';
-
 import { Typography } from '@material-ui/core';
-
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-
-import styles from './Page1.module.scss';
-import { makeStyles } from '@material-ui/core/styles';
-
+import { scss, useStyles } from './Page1.styles';
+import ExampleLineChart1 from '../components/ExampleLineChart1';
 import { useTranslation } from 'react-i18next';
 
-interface IPage1Props {
+export interface IPage1Props {
 }
 
 const chartData = [
@@ -44,46 +39,19 @@ const chartData = [
     }
 ];
 
-export const useStyles = makeStyles(theme => ({
-    pageTitle: {
-        textAlign: 'center'
-    }
-}));
 
-const Page1: React.FC<IPage1Props> = (props) => {
+const Page1 = (props: React.PropsWithChildren<IPage1Props>) => {
     const classes = useStyles();
 
     const { t } = useTranslation();
 
     return (
-        <div className={styles['Page1']}>
-            <Typography
-                className={classes.pageTitle}
-                variant="h3"
-                color="inherit"
-            >
+        <div className={scss['Page1']}>
+            <Typography variant="h3" color="inherit" className={classes.pageTitle}>
                 {t('page1.title')}
             </Typography>
 
-            <LineChart
-                style={{
-                    marginTop: 32
-                }}
-                width={500}
-                height={300}
-                data={chartData}
-                margin={{
-                    top: 5, right: 30, left: 20, bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-            </LineChart>
+            <ExampleLineChart1 data={chartData} />
         </div>
     );
 };

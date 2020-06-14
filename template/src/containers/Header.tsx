@@ -6,58 +6,26 @@
  * https://e-go-digital.com
  */
 
-import React from 'react';
-
+import React, { PropsWithChildren } from 'react';
 import { AppBar, IconButton, Link, Toolbar, Typography } from '@material-ui/core';
-
-import styles from './Header.module.scss';
-import { makeStyles } from '@material-ui/core/styles';
-
+import { scss, useStyles } from './Header.styles';
 import { RouteChildrenProps, withRouter } from 'react-router-dom';
-
 import GitHubIcon from '@material-ui/icons/GitHub';
-
 import Logo from '../assets/egodigital-logo.png';
 import { useTranslation } from 'react-i18next';
 
-interface IHeaderProps {
+export interface IHeaderProps {
 }
 
-type HeaderProps = React.PropsWithChildren<IHeaderProps> & RouteChildrenProps;
+export type HeaderProps = IHeaderProps & RouteChildrenProps;
 
-export const useStyles = makeStyles(theme => ({
-    '@global': {
-        ul: {
-            margin: 0,
-            padding: 0,
-            listStyle: 'none',
-        },
-    },
-    appBar: {
-        borderBottom: `1px solid ${theme.palette.divider}`,
-    },
-    grow: {
-        flexGrow: 1,
-    },
-    link: {
-        cursor: 'pointer',
-        marginRight: theme.spacing(2),
-    },
-    toolbar: {
-        flexWrap: 'wrap',
-    },
-    toolbarTitle: {
-        flexGrow: 1,
-    },
-}));
-
-const Header = (props: React.PropsWithChildren<HeaderProps>) => {
+const Header = (props: PropsWithChildren<HeaderProps>) => {
     const classes = useStyles();
 
     const { t } = useTranslation();
 
     return (
-        <div className={styles['Header']}>
+        <div className={scss['Header']}>
             <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
                 <Toolbar className={classes.toolbar}>
                     <Typography
@@ -68,7 +36,7 @@ const Header = (props: React.PropsWithChildren<HeaderProps>) => {
                     >
                         <img
                             onClick={() => window.open('https://e-go-digital.com', '_blank')}
-                            className={styles['logo']}
+                            className={scss['logo']}
                             src={Logo}
                             alt="e.GO Digital logo"
                             title={t('header.open_ego_digital')} />
