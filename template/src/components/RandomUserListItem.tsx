@@ -75,12 +75,10 @@ const RandomUserListItem = (props: PropsWithChildren<IRandomUserListItemProps>) 
     return (
         <ListItem key={props.user.login.uuid}>
             <ListItemAvatar>
-                <Avatar>
-                    <Avatar
-                        alt={`${props.user.name.first} ${props.user.name.last}`}
-                        src={props.user.picture.thumbnail}
-                    />
-                </Avatar>
+                <Avatar
+                    alt={`${props.user.name.first} ${props.user.name.last}`}
+                    src={props.user.picture.thumbnail}
+                />
             </ListItemAvatar>
 
             <ListItemText
