@@ -6,19 +6,23 @@
  * https://e-go-digital.com
  */
 
+import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './i18';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import store from './store';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import './i18';
+import './index.scss';
 
 ReactDOM.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );

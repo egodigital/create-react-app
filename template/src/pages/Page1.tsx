@@ -6,12 +6,15 @@
  * https://e-go-digital.com
  */
 
-import React from 'react';
-import { Typography } from '@material-ui/core';
-import { scss, useStyles } from './Page1.styles';
 import ExampleLineChart1 from '../components/ExampleLineChart1';
+import React, { PropsWithChildren } from 'react';
+import { Typography } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
+import { scss, useStyles } from './Page1.styles';
 
+/**
+ * Properties for <Page1 /> component.
+ */
 export interface IPage1Props {
 }
 
@@ -39,8 +42,7 @@ const chartData = [
     }
 ];
 
-
-const Page1 = (props: React.PropsWithChildren<IPage1Props>) => {
+const Page1 = (props: PropsWithChildren<IPage1Props>) => {
     const classes = useStyles();
 
     const { t } = useTranslation();
@@ -56,4 +58,7 @@ const Page1 = (props: React.PropsWithChildren<IPage1Props>) => {
     );
 };
 
+/**
+ * Page 1 component.
+ */
 export default Page1;

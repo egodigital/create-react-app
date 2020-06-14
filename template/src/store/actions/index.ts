@@ -6,4 +6,4 @@
  * https://e-go-digital.com
  */
 
-.Body {}
+export * from './page2';

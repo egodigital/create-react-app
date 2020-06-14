@@ -6,15 +6,19 @@
  * https://e-go-digital.com
  */
 
-import React from 'react';
-import './App.css';
-
+import Body from './containers/Body';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Header from './containers/Header';
+import React, { PropsWithChildren } from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import './App.scss';
 
-import Body from './containers/Body';
-import Header from './containers/Header';
+/**
+ * Props for <App /> component.
+ */
+export interface IAppProps {
+}
 
 const theme = createMuiTheme({
     palette: {
@@ -23,7 +27,7 @@ const theme = createMuiTheme({
     }
 });
 
-function App() {
+const App = (props: PropsWithChildren<IAppProps>) => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -34,4 +38,7 @@ function App() {
     );
 }
 
+/**
+ * App component.
+ */
 export default App;

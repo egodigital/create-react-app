@@ -9,65 +9,15 @@
 import React, { PropsWithChildren } from 'react';
 import PropTypes from 'prop-types';
 import { Avatar, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
+import { IRandomUser } from '../store/reducers/page2';
 
-export interface IRandomUser {
-    cell: string;
-    dob: {
-        age: number;
-        date: string;
-    };
-    email: string;
-    gender: string;
-    id: {
-        name: string;
-        value: null;
-    };
-    location: {
-        city: string;
-        coordinates: {
-            latitude: string;
-            longitude: string;
-        };
-        country: string;
-        postcode: number;
-        state: string;
-        street: {
-            name: string;
-            number: number;
-        };
-        timezone: {
-            description: string;
-            offset: string;
-        };
-    };
-    login: {
-        md5: string;
-        password: string;
-        salt: string;
-        sha1: string;
-        sha256: string;
-        username: string;
-        uuid: string;
-    };
-    name: {
-        first: string;
-        last: string;
-        title: string;
-    };
-    nat: string;
-    phone: string;
-    picture: {
-        large: string;
-        medium: string;
-        thumbnail: string;
-    };
-    registered: {
-        age: number;
-        date: string;
-    };
-}
-
+/**
+ * Props for <RandomUserListItem /> component.
+ */
 export interface IRandomUserListItemProps {
+    /**
+     * The underlying user object.
+     */
     user: IRandomUser;
 }
 
@@ -93,4 +43,7 @@ RandomUserListItem.propTypes = {
     user: PropTypes.object.isRequired
 };
 
+/**
+ * The component for an item of a random user list.
+ */
 export default RandomUserListItem;

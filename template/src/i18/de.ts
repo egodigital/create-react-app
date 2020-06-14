@@ -23,4 +23,7 @@ const de: ILanguageStrings = {
     }
 };
 
+/**
+ * German language strings.
+ */
 export default de;

@@ -6,14 +6,17 @@
  * https://e-go-digital.com
  */
 
-import React, { PropsWithChildren } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { Container } from '@material-ui/core';
-import { scss, useStyles } from './Body.styles';
 import NotFoundPage from '../pages/NotFoundPage';
 import Page1 from '../pages/Page1';
 import Page2 from '../pages/Page2';
+import React, { PropsWithChildren } from 'react';
+import { Container } from '@material-ui/core';
+import { Route, Switch } from 'react-router-dom';
+import { scss, useStyles } from './Body.styles';
 
+/**
+ * Props for body component.
+ */
 export interface IBodyProps {
 }
 
@@ -34,4 +37,7 @@ const Body = (props: PropsWithChildren<IBodyProps>) => {
     );
 };
 
+/**
+ * The body component.
+ */
 export default Body;

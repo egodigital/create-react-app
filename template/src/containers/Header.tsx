@@ -6,17 +6,20 @@
  * https://e-go-digital.com
  */
 
-import React, { PropsWithChildren } from 'react';
-import { AppBar, IconButton, Link, Toolbar, Typography } from '@material-ui/core';
-import { scss, useStyles } from './Header.styles';
-import { RouteChildrenProps, withRouter } from 'react-router-dom';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Logo from '../assets/egodigital-logo.png';
+import React, { PropsWithChildren } from 'react';
+import { AppBar, IconButton, Link, Toolbar, Typography } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
+import { RouteChildrenProps, withRouter } from 'react-router-dom';
+import { scss, useStyles } from './Header.styles';
 
 export interface IHeaderProps {
 }
 
+/**
+ * Props for <Header /> component.
+ */
 export type HeaderProps = IHeaderProps & RouteChildrenProps;
 
 const Header = (props: PropsWithChildren<HeaderProps>) => {
@@ -71,4 +74,7 @@ const Header = (props: PropsWithChildren<HeaderProps>) => {
     );
 };
 
+/**
+ * The header component.
+ */
 export default withRouter(Header);

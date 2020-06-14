@@ -6,14 +6,16 @@
  * https://e-go-digital.com
  */
 
+import de from './de';
+import en from './en';
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import { IS_DEV } from '../constants';
 
-import de from './de';
-import en from './en';
-
+/**
+ * Language strings.
+ */
 export interface ILanguageStrings {
     header: {
         open_ego_digital: string;
@@ -55,4 +57,7 @@ i18n.use(LanguageDetector)
         }
     });
 
+/**
+ * The global i18next instance.
+ */
 export default i18n;

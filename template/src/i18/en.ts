@@ -23,4 +23,7 @@ const en: ILanguageStrings = {
     }
 };
 
+/**
+ * English language strings.
+ */
 export default en;

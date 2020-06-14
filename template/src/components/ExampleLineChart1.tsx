@@ -10,7 +10,13 @@ import React, { PropsWithChildren } from 'react';
 import PropTypes from 'prop-types';
 import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 
+/**
+ * Props for <ExampleLineChart1 /> component.
+ */
 export interface IExampleLineChart1Props {
+    /**
+     * The data to display.
+     */
     data: any[];
 }
 
@@ -42,4 +48,7 @@ ExampleLineChart1.propTypes = {
     data: PropTypes.array.isRequired
 };
 
+/**
+ * The example line chart component #1.
+ */
 export default ExampleLineChart1;

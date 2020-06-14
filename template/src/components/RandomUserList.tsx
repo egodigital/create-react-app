@@ -6,13 +6,20 @@
  * https://e-go-digital.com
  */
 
-import React, { PropsWithChildren } from 'react';
 import PropTypes from 'prop-types';
+import RandomUserListItem from './RandomUserListItem';
+import React, { PropsWithChildren } from 'react';
 import { List } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import RandomUserListItem, { IRandomUser } from './RandomUserListItem';
+import { IRandomUser } from '../store/reducers/page2';
 
+/**
+ * Props for <RandomUserList /> component.
+ */
 export interface IRandomUserListProps {
+    /**
+     * The list of items.
+     */
     items: IRandomUser[];
 }
 
@@ -47,4 +54,7 @@ RandomUserList.propTypes = {
     items: PropTypes.array.isRequired
 };
 
+/**
+ * The random user list component.
+ */
 export default RandomUserList;
