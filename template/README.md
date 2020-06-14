@@ -39,5 +39,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Copyright
 
 * property of [e.GO Digital GmbH, Aachen, Germany](https://e-go-digital.com):
-  * [egodigital.png](./src/assets/favicon.ico)
+  * [egodigital-logo.png](./src/assets/egodigital-logo.png)
   * [favicon.ico](./src/public/favicon.ico)

@@ -1,5 +1,5 @@
 # Change Log (@egodigital/create-react-app)
 
-## 0.16.0
+## 0.16.1
 
 * initial release
