@@ -50,7 +50,7 @@ const writeLine = _util.writeLine;
     writeLine(`Copyright (c) ${start.getFullYear()}-present ${'e.GO' + chalk.reset(' Digital GmbH <') + chalk.white('https://e-go-digital.com') + chalk.reset('>')}`);
     writeLine(`${chalk.reset('')}`);
 
-    if (!args['_'].length || !args['_'][0]) {
+    if (!args['_'][0]) {
         _help.showHelp();
     }
 
@@ -113,6 +113,16 @@ const writeLine = _util.writeLine;
         );
 
         spinner.succeed("'package.json' updated");
+    });
+
+    // rename gitignore
+    await withSpinner(`Rename to '.gitignore' ...`, async (spinner) => {
+        const gitignore_old = path.resolve(out_dir, 'gitignore');
+        const gitignore_new = path.resolve(out_dir, '.gitignore');
+
+        await fs.rename(gitignore_old, gitignore_new);
+
+        spinner.succeed("Renamed to '.gitignore'");
     });
 
     // update index.html
