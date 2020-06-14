@@ -7,7 +7,7 @@
  */
 
 import ExampleLineChart1 from '../components/ExampleLineChart1';
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
 import { Typography } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { scss, useStyles } from './Page1.styles';
@@ -18,34 +18,41 @@ import { scss, useStyles } from './Page1.styles';
 export interface IPage1Props {
 }
 
-const chartData = [
-    {
-        name: 'Page A', uv: 4000, pv: 2400, amt: 2400
-    },
-    {
-        name: 'Page B', uv: 3000, pv: 1398, amt: 2210
-    },
-    {
-        name: 'Page C', uv: 2000, pv: 9800, amt: 2290
-    },
-    {
-        name: 'Page D', uv: 2780, pv: 3908, amt: 2000
-    },
-    {
-        name: 'Page E', uv: 1890, pv: 4800, amt: 2181
-    },
-    {
-        name: 'Page F', uv: 2390, pv: 3800, amt: 2500
-    },
-    {
-        name: 'Page G', uv: 3490, pv: 4300, amt: 2100
+function createRandomData(): any[] {
+    const A = 'A'.charCodeAt(0);
+
+    const randData = [];
+
+    for (let i = 0; i < 7; i++) {
+        const letter = String.fromCharCode(A + i);
+
+        randData.push({
+            name: 'Page ' + letter,
+            uv: Math.floor(Math.random() * 10000),
+            pv: Math.floor(Math.random() * 10000),
+            amt: Math.floor(Math.random() * 10000)
+        });
     }
-];
+
+    return randData;
+}
 
 const Page1 = (props: PropsWithChildren<IPage1Props>) => {
+    const [data, setData] = useState(createRandomData());
+
     const classes = useStyles();
 
     const { t } = useTranslation();
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setData(createRandomData());
+        }, 10000);
+
+        return () => {
+            clearInterval(timer);
+        };
+    }, []);
 
     return (
         <div className={scss['Page1']}>
@@ -53,7 +60,12 @@ const Page1 = (props: PropsWithChildren<IPage1Props>) => {
                 {t('page1.title')}
             </Typography>
 
-            <ExampleLineChart1 data={chartData} />
+            <ExampleLineChart1
+                className={scss['chart1']}
+                style={{
+                    marginTop: 32
+                }}
+                data={data} />
         </div>
     );
 };

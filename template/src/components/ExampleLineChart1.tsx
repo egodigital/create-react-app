@@ -8,6 +8,7 @@
 
 import React, { PropsWithChildren } from 'react';
 import PropTypes from 'prop-types';
+import { Optional } from '@egodigital/types';
 import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 
 /**
@@ -15,17 +16,24 @@ import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'r
  */
 export interface IExampleLineChart1Props {
     /**
+     * CSS class name.
+     */
+    className?: Optional<string>;
+    /**
      * The data to display.
      */
     data: any[];
+    /**
+     * Custom styles.
+     */
+    style?: Optional<object>;
 }
 
 const ExampleLineChart1 = (props: PropsWithChildren<IExampleLineChart1Props>) => {
     return (
         <LineChart
-            style={{
-                marginTop: 32
-            }}
+            className={props.className}
+            style={props.style}
             width={500}
             height={300}
             data={props.data}
@@ -45,7 +53,9 @@ const ExampleLineChart1 = (props: PropsWithChildren<IExampleLineChart1Props>) =>
 };
 
 ExampleLineChart1.propTypes = {
-    data: PropTypes.array.isRequired
+    className: PropTypes.string,
+    data: PropTypes.array.isRequired,
+    style: PropTypes.object,
 };
 
 /**
