@@ -50,7 +50,7 @@ const writeLine = _util.writeLine;
     writeLine(`Copyright (c) ${start.getFullYear()}-present ${'e.GO' + chalk.reset(' Digital GmbH <') + chalk.white('https://e-go-digital.com') + chalk.reset('>')}`);
     writeLine(`${chalk.reset('')}`);
 
-    if (!args['_'].length) {
+    if (!args['_'].length || !args['_'][0]) {
         _help.showHelp();
     }
 
