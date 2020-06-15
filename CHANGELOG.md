@@ -1,6 +1,6 @@
 # Change Log (@egodigital/create-react-app)
 
-## 0.20.0
+## 0.20.2
 
 * update `README.md` of template
 

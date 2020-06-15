@@ -28,12 +28,12 @@ If you use [Visual Studio Code](https://code.visualstudio.com/), install the [De
 
 | Folder | Description |
 |--------|-------------|
-| `/src/components` | Contains all global [components](https://reactjs.org/docs/components-and-props.html). |
-| `/src/containers` | Contains all global containers, like headers and bodies. |
-| `/src/i18` | Manages all languages strings, provided by [i18next](https://react.i18next.com/). |
-| `/src/pages` | Should only store components, which do represent pages and their sub elements. |
-| `/src/store` | Global [Redux](https://redux.js.org/basics/usage-with-react) store, with [Thunk](https://github.com/reduxjs/redux-thunk) support. |
-| `/src/serviceWorker.ts` | [PWA](https://en.wikipedia.org/wiki/Progressive_web_application) support. This is DE-ACTIVATED by default. Edit `/src/index.ts` to activate it. |
+| [/src/components](./src/components) | Contains all global [components](https://reactjs.org/docs/components-and-props.html). |
+| [/src/containers](./src/containers) | Contains all global containers, like headers and bodies. |
+| [/src/i18](./src/i18) | Manages all languages strings, provided by [i18next](https://react.i18next.com/). |
+| [/src/pages](./src/pages) | Should only store components, which do represent pages and their sub elements. |
+| [/src/store](./src/store) | Global [Redux](https://redux.js.org/basics/usage-with-react) store, with [Thunk](https://github.com/reduxjs/redux-thunk) support. |
+| [/src/serviceWorker.ts](./src/serviceWorker.ts) | [PWA](https://en.wikipedia.org/wiki/Progressive_web_application) support. This is DE-ACTIVATED by default. Edit [/src/index.ts](./src/index.ts) to activate it. |
 
 ### Tests
 
