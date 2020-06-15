@@ -89,4 +89,4 @@ yarn build
 
 * property of [e.GO Digital GmbH, Aachen, Germany](https://e-go-digital.com):
   * [egodigital-logo.png](./src/assets/egodigital-logo.png)
-  * [favicon.ico](./src/public/favicon.ico)
+  * [favicon.ico](./public/favicon.ico)
