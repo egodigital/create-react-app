@@ -1,6 +1,10 @@
 # Change Log (@egodigital/create-react-app)
 
-## 0.20.2
+## 0.21.0
+
+* add support for [Redux DevTools](https://github.com/zalmoxisus/redux-devtools-extension)
+
+## 0.20.3
 
 * update `README.md` of template
 

@@ -17,12 +17,18 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Debugging
 
+#### Chrome Debugger
+
 If you use [Visual Studio Code](https://code.visualstudio.com/), install the [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension and do the following steps:
 
 * start the local web server
 * open `Run` tab in Visual Studio Code
 * select `Debug <%= app_name %> in Chrome`
 * click on `Start Debugging`
+
+#### Redux DevTools
+
+You can install [DevTools](https://github.com/zalmoxisus/redux-devtools-extension) for browsers, like [Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/), to debug the underlying [Redux](https://redux.js.org/) store.
 
 ### File and folder structure
 
