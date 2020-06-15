@@ -1,5 +1,13 @@
 # Change Log (@egodigital/create-react-app)
 
+## 0.20.0
+
+* update `README.md` of template
+
+## 0.19.0
+
+* add support for [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension
+
 ## 0.18.0
 
 * cleanups in template

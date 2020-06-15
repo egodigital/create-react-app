@@ -47,6 +47,7 @@ i18n.use(LanguageDetector)
             wait: true,
         },
 
+        // EDIT if you want add or remove languages
         resources: {
             de: {
                 translation: de

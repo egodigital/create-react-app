@@ -2,39 +2,88 @@
 
 This project was bootstrapped with [React Web Creator](https://github.com/egodigital/create-react-app).
 
-## Available Scripts
+## Development
 
-In the project directory, you can run:
+### Start local web server
 
-### `npm start`
+```bash
+npm start
 
-Runs the app in the development mode.<br />
+# if you use Yarn
+yarn start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Debugging
 
-### `npm test`
+If you use [Visual Studio Code](https://code.visualstudio.com/), install the [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension and do the following steps:
+
+* start the local web server
+* open `Run` tab in Visual Studio Code
+* select `Debug <%= app_name %> in Chrome`
+* click on `Start Debugging`
+
+### File and folder structure
+
+| Folder | Description |
+|--------|-------------|
+| `/src/components` | Contains all global [components](https://reactjs.org/docs/components-and-props.html). |
+| `/src/containers` | Contains all global containers, like headers and bodies. |
+| `/src/i18` | Manages all languages strings, provided by [i18next](https://react.i18next.com/). |
+| `/src/pages` | Should only store components, which do represent pages and their sub elements. |
+| `/src/store` | Global [Redux](https://redux.js.org/basics/usage-with-react) store, with [Thunk](https://github.com/reduxjs/redux-thunk) support. |
+| `/src/serviceWorker.ts` | [PWA](https://en.wikipedia.org/wiki/Progressive_web_application) support. This is DE-ACTIVATED by default. Edit `/src/index.ts` to activate it. |
+
+### Tests
+
+```bash
+npm test
+
+# if you use Yarn
+yarn test
+```
 
 Launches the test runner in the interactive watch mode.
 
-### `npm run build`
+To implement a test for a component file, like `MyComponent.tsx`, create a file with a `.test` suffix in the same folder (`MyComponent.test.tsx`), and start with something, like the following skeleton:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```typescript
+import Adapter from 'enzyme-adapter-react-16';
+import MyComponent from './MyComponent';
+import React from 'react';
+import { configure, shallow, ShallowWrapper } from 'enzyme';
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+configure({ adapter: new Adapter() });
 
-### `npm run eject`
+describe('<MyComponent /> component', () => {
+    let wrapper: ShallowWrapper;
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    beforeEach(() => {
+        wrapper = shallow(<MyComponent />);
+    });
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    it('should contain exact 1 <div> element', () => {
+        // check if component requires exact 1 <div> element
+        expect(wrapper.find('div')).toHaveLength(1);
+    });
+});
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You can find out more in the [Jest](https://jestjs.io/docs/en/getting-started) and [enzyme](https://enzymejs.github.io/enzyme/docs/installation/react-16.html) documentations.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Production
+
+### Build
+
+The following command builds the app for production to the `build` folder:
+
+```bash
+npm run build
+
+# if you use Yarn
+yarn build
+```
 
 ## Copyright
 

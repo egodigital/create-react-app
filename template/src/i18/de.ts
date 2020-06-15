@@ -8,6 +8,7 @@
 
 import { ILanguageStrings } from ".";
 
+// EDIT if you want to update german language strings
 const de: ILanguageStrings = {
     header: {
         open_ego_digital: 'e.GO Digital öffnen ...',

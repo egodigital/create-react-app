@@ -10,7 +10,7 @@ import Page2Reducer, { IPage2ReduxState } from './reducers/page2';
 import Thunk from 'redux-thunk';
 import { Nilable } from '@egodigital/types';
 import { ConnectedComponent, connect as connectToReduxStore } from 'react-redux';
-import { Dispatch, applyMiddleware, combineReducers, createStore } from 'redux';
+import { applyMiddleware, combineReducers, createStore, Dispatch } from 'redux';
 
 /**
  * Function, which connects Redux actions to props.
@@ -64,6 +64,8 @@ export function connect(component: any, options: IConnectOptions): ConnectedComp
     )(component);
 }
 
+// EDIT this if you want to enhance the
+// global Redux store
 const store = createStore(
     combineReducers({
         page2: Page2Reducer
