@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "dbaeumer.vscode-eslint",
-        "ego-digital.vscode-powertools"
+        "ego-digital.vscode-powertools",
+        "msjsdiag.debugger-for-chrome"
     ]
 }

@@ -157,6 +157,28 @@ const writeLine = _util.writeLine;
         spinner.succeed("'README.md' updated");
     });
 
+    // create launch.json
+    await withSpinner(`Create 'launch.json' ...`, async (spinner) => {
+        const out_file = path.resolve(out_dir, '.vscode/launch.json');
+
+        const launchJSON = JSON.stringify({
+            'version': '0.2.0',
+            'configurations': [
+                {
+                    'type': 'chrome',
+                    'request': 'launch',
+                    'name': `Debug ${app_name} in Chrome`,
+                    'url': 'http://localhost:3000',
+                    'webRoot': '${workspaceFolder}'
+                }
+            ]
+        }, null, 4);
+
+        await fs.writeFile(out_file, launchJSON, 'utf8');
+
+        spinner.succeed("'launch.json' created");
+    });
+
     // execute NPM commands
     await withSpinner("Execute 'npm' commands ...", async (spinner) => {
         spinner.text = "Execute 'npm install' ...";

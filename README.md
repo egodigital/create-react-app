@@ -5,6 +5,7 @@
 Generator, that creates and setup a new [React](https://reactjs.org/) web app, with a lot of benefits:
 
 * [TypeScript](https://www.typescriptlang.org/) support
+* [Debugging in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial#_debugging-react)
 * [Material UI](https://material-ui.com/)
 * [Page routing](https://www.npmjs.com/package/react-router-dom)
 * [SASS modules](https://github.com/sass/node-sass)
