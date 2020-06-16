@@ -7,7 +7,7 @@
  */
 
 import GitHubIcon from '@material-ui/icons/GitHub';
-import Logo from '../assets/egodigital-logo.png';
+import Logo from '../../assets/egodigital-logo.png';
 import React, { PropsWithChildren } from 'react';
 import { AppBar, IconButton, Link, Toolbar, Typography } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
