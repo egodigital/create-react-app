@@ -6,6 +6,6 @@
  * https://e-go-digital.com
  */
 
-import scssStyles from './NotFoundPage.module.scss';
+import scssStyles from './index.module.scss';
 
 export const scss = scssStyles;

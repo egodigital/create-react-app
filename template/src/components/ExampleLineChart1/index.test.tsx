@@ -7,7 +7,7 @@
  */
 
 import Adapter from 'enzyme-adapter-react-16';
-import ExampleLineChart1 from './ExampleLineChart1';
+import ExampleLineChart1 from '.';
 import React from 'react';
 import { configure, shallow, ShallowWrapper } from 'enzyme';
 import { LineChart } from 'recharts';

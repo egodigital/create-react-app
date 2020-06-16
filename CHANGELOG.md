@@ -1,5 +1,9 @@
 # Change Log (@egodigital/create-react-app)
 
+## 0.22.0
+
+* improve folder structure
+
 ## 0.21.1
 
 * add support for [Redux DevTools](https://github.com/zalmoxisus/redux-devtools-extension)

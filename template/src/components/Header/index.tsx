@@ -12,7 +12,7 @@ import React, { PropsWithChildren } from 'react';
 import { AppBar, IconButton, Link, Toolbar, Typography } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { RouteChildrenProps, withRouter } from 'react-router-dom';
-import { scss, useStyles } from './Header.styles';
+import { scss, useStyles } from './index.styles';
 
 export interface IHeaderProps {
 }

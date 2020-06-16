@@ -7,11 +7,11 @@
  */
 
 import PropTypes from 'prop-types';
-import RandomUserListItem from './RandomUserListItem';
+import RandomUserListItem from '../RandomUserListItem';
 import React, { PropsWithChildren } from 'react';
 import { List } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { IRandomUser } from '../store/reducers/page2';
+import { IRandomUser } from '../../store/reducers/page2';
 
 /**
  * Props for <RandomUserList /> component.

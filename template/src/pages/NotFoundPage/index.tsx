@@ -8,7 +8,7 @@
 
 import React, { PropsWithChildren } from 'react';
 import { NavLink } from 'react-router-dom';
-import { scss } from './NotFoundPage.styles';
+import { scss } from './index.styles';
 
 /**
  * Properties for <NotFoundPage /> component.

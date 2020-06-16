@@ -6,8 +6,8 @@
  * https://e-go-digital.com
  */
 
-import * as actions from '../store/actions';
-import RandomUserList from '../components/RandomUserList';
+import * as actions from '../../store/actions';
+import RandomUserList from '../../components/RandomUserList';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Nilable } from '@egodigital/types';
@@ -15,9 +15,9 @@ import { CircularProgress, StyledComponentProps, Typography } from '@material-ui
 import { Alert } from '@material-ui/lab';
 import { WithTranslation, withTranslation } from 'react-i18next';
 import { RouteChildrenProps, withRouter } from 'react-router-dom';
-import { scss, withStyles } from './Page2.styles';
-import { connect } from '../store';
-import { IRandomUser } from '../store/reducers/page2';
+import { scss, withStyles } from './index.styles';
+import { connect } from '../../store';
+import { IRandomUser } from '../../store/reducers/page2';
 
 export interface IPage2Props extends StyledComponentProps, WithTranslation {
     /**
