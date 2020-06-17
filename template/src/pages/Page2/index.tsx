@@ -6,8 +6,8 @@
  * https://e-go-digital.com
  */
 
-import * as actions from '../store/actions';
-import RandomUserList from '../components/RandomUserList';
+import * as actions from '../../store/actions';
+import RandomUserList from '../../components/RandomUserList';
 import React, { PropsWithChildren, useEffect } from 'react';
 import { Nilable } from '@egodigital/types';
 import { CircularProgress, StyledComponentProps, Typography } from '@material-ui/core';
@@ -15,8 +15,8 @@ import { Alert } from '@material-ui/lab';
 import { useTranslation } from 'react-i18next';
 import { RouteChildrenProps } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { scss, withStyles } from './Page2.styles';
-import { IReduxState } from '../store';
+import { scss, withStyles } from './index.styles';
+import { IReduxState } from '../../store';
 
 export interface IPage2Props extends StyledComponentProps {
 }
