@@ -24,6 +24,14 @@ To execute the generator, run one of the following commands:
 npx github:egodigital/create-react-app my-new-app
 ```
 
+The following arguments are supported:
+
+| Name         | Alias | Description | Example |
+|--------------|-------|-------------|---------|
+| `force`      | `f`   | Overwrite existing project. | `-f` |
+| `git-init`   | `g`   | Automatically initializes a git repository for the project. | `-g` |
+| `vscode`     | `v`   | Automatically open Visual Studio Code after project has been created. | `-v` |
+
 ## License
 
 React Web Creator is [licensed as MIT](https://github.com/egodigital/create-react-app/blob/master/LICENSE).
