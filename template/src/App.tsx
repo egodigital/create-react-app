@@ -6,9 +6,9 @@
  * https://e-go-digital.com
  */
 
-import Body from './containers/Body';
+import Body from './components/Body';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Header from './containers/Header';
+import Header from './components/Header';
 import React, { PropsWithChildren } from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';

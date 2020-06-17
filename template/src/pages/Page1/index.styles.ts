@@ -6,7 +6,7 @@
  * https://e-go-digital.com
  */
 
-import scssStyles from './Page1.module.scss';
+import scssStyles from './index.module.scss';
 import { makeStyles } from '@material-ui/core/styles';
 
 export const scss = scssStyles;

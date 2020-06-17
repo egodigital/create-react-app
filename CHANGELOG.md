@@ -1,5 +1,10 @@
 # Change Log (@egodigital/create-react-app)
 
+## 0.22.0
+
+* improve folder structure, by moving components to sub folders
+* move containers to components
+
 ## 0.21.1
 
 * add support for [Redux DevTools](https://github.com/zalmoxisus/redux-devtools-extension)

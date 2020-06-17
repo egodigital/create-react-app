@@ -7,11 +7,11 @@
  */
 
 import Adapter from 'enzyme-adapter-react-16';
-import RandomUserList from './RandomUserList';
-import RandomUserListItem from './RandomUserListItem';
+import RandomUserList from '.';
+import RandomUserListItem from '../RandomUserListItem';
 import React from 'react';
 import { configure, shallow } from 'enzyme';
-import { IRandomUser } from '../store/reducers/page2';
+import { IRandomUser } from '../../store/reducers/page2';
 
 configure({ adapter: new Adapter() });
 

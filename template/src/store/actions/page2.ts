@@ -8,7 +8,7 @@
 
 import axios from 'axios';
 import Enumerable from 'node-enumerable';
-import { Dispatch } from 'redux';
+import Store from '../.';
 import { Nilable } from '@egodigital/types';
 import { IRandomUser } from '../reducers/page2';
 
@@ -20,44 +20,30 @@ export const PAGE2_RANDOM_USERS_FETCHING = 'PAGE2_RANDOM_USERS_FETCHING';
  *
  * @param {number} results The maximum number of results. 
  * @param {string} nationality The country / nationality, like 'gb' or 'de'.
- * 
- * @returns {any} The dispatch action. 
  */
-export function fetchRandomUsers(results: number, nationality: string) {
-    return (dispatch: Dispatch) => {
-        const finalDispatch = (error: any, users?: Nilable<IRandomUser[]>) => {
-            dispatch({
-                type: PAGE2_RANDOM_USERS_FETCHED,
-                error,
-                users
-            });
-        };
-
-        try {
-            dispatch({
-                type: PAGE2_RANDOM_USERS_FETCHING
-            });
-
-            const url = `https://randomuser.me/api/?results=${
-                encodeURIComponent(results).trim()
-                }&nat=${
-                encodeURIComponent(nationality).trim()
-                }`;
-
-            axios.get(url)
-                .then(response => {
-                    const users = Enumerable.from<IRandomUser>(response.data.results)
-                        .orderBy(u => u.name.last.toLowerCase())
-                        .thenBy(u => u.name.first.toLowerCase())
-                        .toArray();
-
-                    finalDispatch(null, users);
-                })
-                .catch(err => {
-                    finalDispatch(err);
-                });
-        } catch (e) {
-            finalDispatch(e);
-        }
+export function fetchRandomUsers(results: number, nationality: string): void {
+    const finalDispatch = (error: any, users?: Nilable<IRandomUser[]>) => {
+        Store.dispatch({ type: PAGE2_RANDOM_USERS_FETCHED, error, users });
     };
+
+    try {
+        Store.dispatch({ type: PAGE2_RANDOM_USERS_FETCHING });
+
+        const url = `https://randomuser.me/api/?results=${results}&nat=${encodeURIComponent(nationality)}`;
+
+        axios.get(url)
+            .then(response => {
+                const users = Enumerable.from<IRandomUser>(response.data.results)
+                    .orderBy(u => u.name.last.toLowerCase())
+                    .thenBy(u => u.name.first.toLowerCase())
+                    .toArray();
+
+                finalDispatch(null, users);
+            })
+            .catch(err => {
+                finalDispatch(err);
+            });
+    } catch (e) {
+        finalDispatch(e);
+    }
 }

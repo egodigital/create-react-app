@@ -6,11 +6,11 @@
  * https://e-go-digital.com
  */
 
-import ExampleLineChart1 from '../components/ExampleLineChart1';
+import ExampleLineChart1 from '../../components/ExampleLineChart1';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 import { Typography } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
-import { scss, useStyles } from './Page1.styles';
+import { scss, useStyles } from './index.styles';
 
 /**
  * Properties for <Page1 /> component.

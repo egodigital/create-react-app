@@ -9,7 +9,7 @@
 import React, { PropsWithChildren } from 'react';
 import PropTypes from 'prop-types';
 import { Avatar, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
-import { IRandomUser } from '../store/reducers/page2';
+import { IRandomUser } from '../../store/reducers/page2';
 
 /**
  * Props for <RandomUserListItem /> component.

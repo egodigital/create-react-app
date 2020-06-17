@@ -12,7 +12,7 @@ import Page2 from '../pages/Page2';
 import React, { PropsWithChildren } from 'react';
 import { Container } from '@material-ui/core';
 import { Route, Switch } from 'react-router-dom';
-import { scss, useStyles } from './Body.styles';
+import { scss, useStyles } from './index.styles';
 
 /**
  * Props for body component.
@@ -28,7 +28,7 @@ const Body = (props: PropsWithChildren<IBodyProps>) => {
             <Switch>
                 <Route path="/" exact component={Page1} />
                 <Route path="/page-1" exact component={Page1} />
-                <Route path="/page-2" exact render={() => <Page2 />} />
+                <Route path="/page-2" exact component={Page2} />
 
                 {/** fallback => 404 not found **/}
                 <Route path="/" component={NotFoundPage} />
