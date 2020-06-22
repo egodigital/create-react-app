@@ -1,6 +1,10 @@
 # Change Log (@egodigital/create-react-app)
 
-## 0.22.0
+## 0.23.0
+
+* add [ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) extension as recommendation in `extensions.json`
+
+## 0.22.2
 
 * improve folder structure, by moving components to sub folders
 * move containers to components
