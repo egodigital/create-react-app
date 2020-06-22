@@ -11,11 +11,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const scss = scssStyles;
 
-export const useStyles = makeStyles(theme => {
-    return {
-        pageTitle: {
-            marginBottom: theme.spacing(2),
-            textAlign: 'center'
-        }
-    };
-});
+export const useStyles = makeStyles(theme => ({
+    pageTitle: {
+        textAlign: 'center'
+    }
+}));

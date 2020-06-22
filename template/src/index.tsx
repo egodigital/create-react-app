@@ -6,7 +6,9 @@
  * https://e-go-digital.com
  */
 
+import { ApolloProvider } from '@apollo/react-hooks';
 import App from './App';
+import countriesQLClient from './graphql/countriesQL';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
@@ -20,7 +22,9 @@ ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
-                <App />
+                <ApolloProvider client={countriesQLClient}>
+                    <App />
+                </ApolloProvider>
             </BrowserRouter>
         </Provider>
     </React.StrictMode>,

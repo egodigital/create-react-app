@@ -21,6 +21,10 @@ const en: ILanguageStrings = {
     page2: {
         short_title: 'axios example',
         title: 'Page 2 - axios example'
+    },
+    page3: {
+        short_title: 'GraphQL example',
+        title: 'Page 3 - GraphQL example'
     }
 };
 

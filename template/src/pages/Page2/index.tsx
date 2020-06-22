@@ -10,15 +10,15 @@ import * as actions from '../../store/actions';
 import RandomUserList from '../../components/RandomUserList';
 import React, { PropsWithChildren, useEffect } from 'react';
 import { Nilable } from '@egodigital/types';
-import { CircularProgress, StyledComponentProps, Typography } from '@material-ui/core';
+import { CircularProgress, Typography } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import { useTranslation } from 'react-i18next';
 import { RouteChildrenProps } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { scss, withStyles } from './index.styles';
+import { scss, useStyles } from './index.styles';
 import { IReduxState } from '../../store';
 
-export interface IPage2Props extends StyledComponentProps {
+export interface IPage2Props {
 }
 
 /**
@@ -30,6 +30,8 @@ const Page2 = (props: PropsWithChildren<Page2Props>) => {
     const error = useSelector((state: IReduxState) => state.page2.lastError);
     const isFetching = useSelector((state: IReduxState) => state.page2.isFetching);
     const users = useSelector((state: IReduxState) => state.page2.users);
+
+    const classes = useStyles();
 
     const { t } = useTranslation();
 
@@ -76,7 +78,7 @@ const Page2 = (props: PropsWithChildren<Page2Props>) => {
 
     return (
         <div className={scss['Page2']}>
-            <Typography variant="h3" className={props.classes!.pageTitle} color="inherit">
+            <Typography variant="h3" className={classes.pageTitle} color="inherit">
                 {t('page2.title')}
             </Typography>
 
@@ -89,4 +91,4 @@ const Page2 = (props: PropsWithChildren<Page2Props>) => {
 /**
  * Page 2 component.
  */
-export default withStyles(Page2);
+export default Page2;

@@ -11,6 +11,7 @@ Generator, that creates and setup a new [React](https://reactjs.org/) web app, w
 * [SASS modules](https://github.com/sass/node-sass)
 * [multi language support](https://react.i18next.com/)
 * [axios HTTP client](https://github.com/axios/axios)
+* [Apollo GraphQL client](https://www.apollographql.com/docs/react/)
 * [Redux](https://redux.js.org/) + [Thunk](https://github.com/reduxjs/redux-thunk) + [DevTools](https://github.com/zalmoxisus/redux-devtools-extension)
 * [Recharts](https://recharts.org/)
 * [Jest](https://jestjs.io/) + [enzyme](https://enzymejs.github.io/enzyme/)

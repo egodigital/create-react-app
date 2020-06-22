@@ -9,6 +9,7 @@
 import NotFoundPage from '../../pages/NotFoundPage';
 import Page1 from '../../pages/Page1';
 import Page2 from '../../pages/Page2';
+import Page3 from '../../pages/Page3';
 import React, { PropsWithChildren } from 'react';
 import { Container } from '@material-ui/core';
 import { Route, Switch } from 'react-router-dom';
@@ -29,6 +30,7 @@ const Body = (props: PropsWithChildren<IBodyProps>) => {
                 <Route path="/" exact component={Page1} />
                 <Route path="/page-1" exact component={Page1} />
                 <Route path="/page-2" exact component={Page2} />
+                <Route path="/page-3" exact component={Page3} />
 
                 {/** fallback => 404 not found **/}
                 <Route path="/" component={NotFoundPage} />

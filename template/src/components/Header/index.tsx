@@ -58,6 +58,11 @@ const Header = (props: PropsWithChildren<HeaderProps>) => {
                         onClick={() => props.history.push('/page-2')}>
                         {t('page2.short_title')}
                     </Link>
+                    <Link
+                        className={classes.link}
+                        onClick={() => props.history.push('/page-3')}>
+                        {t('page3.short_title')}
+                    </Link>
 
                     <div>
                         <IconButton

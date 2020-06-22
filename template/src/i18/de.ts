@@ -21,6 +21,10 @@ const de: ILanguageStrings = {
     page2: {
         short_title: 'axios Beispiel',
         title: 'Seite 2 - axios Beispiel'
+    },
+    page3: {
+        short_title: 'GraphQL Beispiel',
+        title: 'Seite 3 - GraphQL Beispiel'
     }
 };
 

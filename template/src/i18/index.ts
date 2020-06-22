@@ -29,6 +29,10 @@ export interface ILanguageStrings {
         short_title: string;
         title: string;
     };
+    page3: {
+        short_title: string;
+        title: string;
+    };
 }
 
 i18n.use(LanguageDetector)
