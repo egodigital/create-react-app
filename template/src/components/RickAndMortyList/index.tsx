@@ -6,21 +6,21 @@
  * https://e-go-digital.com
  */
 
-import CountryListItem from '../CountryListItem';
 import PropTypes from 'prop-types';
 import React, { PropsWithChildren } from 'react';
+import RickAndMortyListItem from '../RickAndMortyListItem';
 import { List } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { ICountry } from '../../graphql/countriesQL';
+import { IRickAndMortyCharacter } from '../../graphql/rickAndMorty';
 
 /**
- * Props for <CountryList /> component.
+ * Props for <RickAndMortyList /> component.
  */
-export interface ICountryListProps {
+export interface IRickAndMortyListProps {
     /**
      * The list of items.
      */
-    items: ICountry[];
+    items: IRickAndMortyCharacter[];
 }
 
 const useStyles = makeStyles(theme => {
@@ -36,16 +36,16 @@ const useStyles = makeStyles(theme => {
     };
 });
 
-const CountryList = (props: PropsWithChildren<ICountryListProps>) => {
+const RickAndMortyList = (props: PropsWithChildren<IRickAndMortyListProps>) => {
     const classes = useStyles();
 
     return (
         <List className={classes.list}>
-            {props.items.map(country => {
+            {props.items.map(character => {
                 return (
-                    <CountryListItem
-                        country={country}
-                        key={`${country._id}`}
+                    <RickAndMortyListItem
+                        character={character}
+                        key={`${character.id}`}
                     />
                 );
             })}
@@ -53,11 +53,11 @@ const CountryList = (props: PropsWithChildren<ICountryListProps>) => {
     );
 };
 
-CountryList.propTypes = {
+RickAndMortyList.propTypes = {
     items: PropTypes.array.isRequired
 };
 
 /**
- * The country list component.
+ * The Rick and Morty character list component.
  */
-export default CountryList;
+export default RickAndMortyList;

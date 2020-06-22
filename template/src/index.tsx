@@ -8,9 +8,9 @@
 
 import { ApolloProvider } from '@apollo/react-hooks';
 import App from './App';
-import countriesQLClient from './graphql/countriesQL';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import rickAndMortyQL from './graphql/rickAndMorty';
 import * as serviceWorker from './serviceWorker';
 import store from './store';
 import { BrowserRouter } from 'react-router-dom';
@@ -22,7 +22,7 @@ ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
-                <ApolloProvider client={countriesQLClient}>
+                <ApolloProvider client={rickAndMortyQL}>
                     <App />
                 </ApolloProvider>
             </BrowserRouter>

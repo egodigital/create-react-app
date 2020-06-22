@@ -2,7 +2,7 @@
 
 ## 0.23.0
 
-* add [GraphQL example](https://countries-274616.ew.r.appspot.com/) using [Apollo Client](https://www.apollographql.com/docs/react/)
+* add [GraphQL example](https://rickandmortyapi.com/graphql) using [Apollo Client](https://www.apollographql.com/docs/react/)
 * add [ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) extension as recommendation in `extensions.json`
 
 ## 0.22.2

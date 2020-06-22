@@ -6,48 +6,32 @@
  * https://e-go-digital.com
  */
 
-import CountryList from '../../components/CountryList';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
+import RickAndMortyList from '../../components/RickAndMortyList';
+import * as queries from '../../graphql/rickAndMorty/queries';
 import { useQuery } from '@apollo/react-hooks';
 import { Nilable } from '@egodigital/types';
 import { CircularProgress, Typography } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
-import { gql } from 'apollo-boost';
 import { useTranslation } from 'react-i18next';
 import { scss, useStyles } from './index.styles';
-import { ICountry } from '../../graphql/countriesQL';
+import { IRickAndMortyCharacter } from '../../graphql/rickAndMorty';
 
 /**
- * Properties for <Page1 /> component.
+ * Properties for <Page3 /> component.
  */
 export interface IPage3Props {
 }
 
-const query = gql`
-  query {
-	Country {
-      name
-      capital
-      location {
-        longitude,
-        latitude
-      }
-      flag {
-        svgFile
-      }
-    }
-  }
-`;
-
 const Page3 = (props: PropsWithChildren<IPage3Props>) => {
-    const [countries, setCountries] = useState<Nilable<ICountry[]>>(null);
+    const [characters, setCharacters] = useState<Nilable<IRickAndMortyCharacter[]>>(null);
 
     const classes = useStyles();
     const { t } = useTranslation();
-    const { data, error, loading } = useQuery(query);
+    const { data, error, loading } = useQuery(queries.fetchCharacters);
 
     useEffect(() => {
-        setCountries(data?.Country);
+        setCharacters(data?.characters?.results);
     }, [data]);
 
     useEffect(() => {
@@ -62,9 +46,9 @@ const Page3 = (props: PropsWithChildren<IPage3Props>) => {
     } else {
         if (error) {
             list = <Alert severity="error">{error}</Alert>;
-        } else if (countries) {
-            if (countries.length) {
-                list = <CountryList items={countries} />;
+        } else if (characters) {
+            if (characters.length) {
+                list = <RickAndMortyList items={characters} />;
             } else {
                 list = <Alert severity="warning">No stations found.</Alert>;
             }
