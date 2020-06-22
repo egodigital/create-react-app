@@ -47,10 +47,7 @@ const Page3 = (props: PropsWithChildren<IPage3Props>) => {
     const { data, error, loading } = useQuery(query);
 
     useEffect(() => {
-        if (data?.Country) {
-            setCountries(data.Country);
-        }
-
+        setCountries(data?.Country);
     }, [data]);
 
     useEffect(() => {
