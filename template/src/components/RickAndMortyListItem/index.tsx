@@ -33,7 +33,7 @@ const RickAndMortyListItem = (props: PropsWithChildren<IRickAndMortyListItemProp
 
             <ListItemText
                 primary={`${props.character.name}`}
-                secondary={`${props.character.species}; ${props.character.location.name}`}
+                secondary={`${props.character.species} (${props.character.gender}); ${props.character.location.name}`}
             />
         </ListItem>
     );
