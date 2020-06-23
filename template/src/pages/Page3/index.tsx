@@ -28,7 +28,7 @@ const Page3 = (props: PropsWithChildren<IPage3Props>) => {
 
     const classes = useStyles();
     const { t } = useTranslation();
-    const { data, error, loading } = useQuery(queries.fetchCharacters);
+    const { data, error, loading } = useQuery(queries.FETCH_CHARACTERS_QUERY);
 
     useEffect(() => {
         setCharacters(data?.characters?.results);

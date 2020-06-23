@@ -11,7 +11,7 @@ import { gql } from 'apollo-boost';
 /**
  * GraphQL query for fetching Rick & Morty characters.
  */
-export const fetchCharacters = gql`
+export const FETCH_CHARACTERS_QUERY = gql`
   query {
     characters {
       results {
