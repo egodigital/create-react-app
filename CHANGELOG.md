@@ -5,10 +5,11 @@
 * add [GraphQL example](https://rickandmortyapi.com/graphql) using [Apollo Client](https://www.apollographql.com/docs/react/)
 * add [ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) extension as recommendation in `extensions.json`
 
-## 0.22.2
+## 0.22.3
 
 * improve folder structure, by moving components to sub folders
 * move containers to components
+* bugfixes
 
 ## 0.21.1
 
