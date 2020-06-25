@@ -1,7 +1,7 @@
 {
     "name": "@egodigital/create-react-app",
     "displayName": "React Web Creator",
-    "version": "0.22.2",
+    "version": "0.22.3",
     "description": "Generator, that creates and setup a new React web app.",
     "main": "index.js",
     "bin": {

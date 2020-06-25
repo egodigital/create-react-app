@@ -1,9 +1,10 @@
 # Change Log (@egodigital/create-react-app)
 
-## 0.22.0
+## 0.22.3
 
 * improve folder structure, by moving components to sub folders
 * move containers to components
+* bugfixes
 
 ## 0.21.1
 
