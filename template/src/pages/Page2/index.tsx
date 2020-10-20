@@ -14,7 +14,7 @@ import { CircularProgress, Typography } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import { useTranslation } from 'react-i18next';
 import { RouteChildrenProps } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { scss, useStyles } from './index.styles';
 import { IReduxState } from '../../store';
 
@@ -27,6 +27,7 @@ export interface IPage2Props {
 export type Page2Props = IPage2Props & RouteChildrenProps;
 
 const Page2 = (props: PropsWithChildren<Page2Props>) => {
+    const dispatch = useDispatch();
     const error = useSelector((state: IReduxState) => state.page2.lastError);
     const isFetching = useSelector((state: IReduxState) => state.page2.isFetching);
     const users = useSelector((state: IReduxState) => state.page2.users);
@@ -48,7 +49,7 @@ const Page2 = (props: PropsWithChildren<Page2Props>) => {
             nat = query.get('nat')!.trim();
         }
 
-        actions.fetchRandomUsers(max, nat);
+        dispatch(actions.fetchRandomUsers(max, nat));
     }
 
     useEffect(() => {
